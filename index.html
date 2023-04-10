@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Dev Junior - MTD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./assets/favicon-32x32.png" type="image/x-icon">
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+    <main>
+        <section class="cards">
+            <div class="card-front">
+                <img id="card-front-img" src="./assets/bg-card-front.png" alt="Image card front">
+                <div class="card-front-info">
+                    <img id="info-logo" src="./assets/card-logo.svg" alt="Card logo" >
+                    <span id="info-card-number">0000 0000 0000 0000</span>
+                    <span id="info-card-name">Jane Appleseed</span>
+                    <span id="info-exp-date">00/00</span>
+                </div>
+            </div>
+            <div class="card-back">
+                <img id="card-back-img" src="./assets/bg-card-back.png" alt="Image card back">
+                <span id="info-card-cvc">000</span>
+            </div>
+        </section>
+        <section class="form-box" > 
+            <form class="form" method="post"> 
+                <label for="name">Cardholder Name</label>
+                <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed" maxlength="25">
+                <span class="text-error">Full name</span>
+                <label for="number">Card Number</label>
+                <input type="text" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+                <span class="text-error" >Wrong format, numbers only</span>
+                <div>
+                    <label for="exp-date">Exp. Date (MM/YY)</label>
+                    <input type="text" name="month" id="month" placeholder="MM" maxlength="2">
+                    <input type="text" name="years" id="years" placeholder="YY" maxlength="2">
+                    <span id="text-error-exp-date" class="text-error">Can`t be blank</span>
+                    <label for="cvc">CVC</label>
+                    <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" maxlength="3">
+                    <span id="text-error-cvc" class="text-error">Can`t be blank</span>
+                </div>
+                <input id="submit-form" type="submit" name="submit" value="Confirm">
+            </form>
+
+            <div class="confirm-form">
+                <img src="./assets/icon-complete.svg" alt="Icon for complete form">
+                <h1>Thank you!</h1>
+                <p>We've added your card details</p>
+                <button>Continue</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
