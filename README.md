@@ -14,12 +14,21 @@ Para acessar a interface [clique aqui!](https://teste-dev-junior-mtd-react.verce
 
 Para usar o projeto, siga estas etapas:
 
+* Clone o repositório
+
 ```
 git clone https://github.com/CristianoLedur/Teste-Dev-Junior-MTD.git
 ```
 
+* Acesse a pasta do projeto
 ```
-yarn install
+cd Teste-Dev-Junior-MTD
+```
+
+* Instale as dependências
+
+```
+npm install
 ```
 
 E pronto, você já pode sair fazendo ajustes e melhorias no projeto. 
