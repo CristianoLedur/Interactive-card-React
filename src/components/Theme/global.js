@@ -83,10 +83,10 @@ export default createGlobalStyle`
     }
 
     #info-card-name {
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    width: 85%;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        width: 85%;
     }
 
     #info-exp-date {
@@ -108,7 +108,7 @@ export default createGlobalStyle`
     }
 
     #info-card-cvc { 
-        padding-top: 6.2rem;
+        padding-top: 6.15rem;
         padding-left: 19.5rem;
         letter-spacing: 2px;
         font-size:0.8rem;  
@@ -166,7 +166,7 @@ export default createGlobalStyle`
         border-color: transparent !important;
     }
 
-    .text-error-undefined, .text-error-format {
+    .text-error-undefined, .text-error-format, .text-error-date {
         display: none;
         font-size: 0.66rem;
         color: var(--red);
@@ -211,6 +211,7 @@ export default createGlobalStyle`
     }
 
     #submit-form {
+        padding-left: 0;
         background: var(--very-dark-violet);
         color: var(--white);
         height: 3rem;
@@ -367,6 +368,7 @@ export default createGlobalStyle`
             align-items: flex-start;
             justify-content: center;
             padding-left: 0;
+            margin-bottom: 2rem;
         }
 
         .form {
@@ -429,7 +431,6 @@ export default createGlobalStyle`
             height: 3.33rem;
             width: 100%;
         }
-
     }
 
     @media screen and (max-width: 375px) {
@@ -445,15 +446,22 @@ export default createGlobalStyle`
             font-size: 0.6rem;
         }
 
+        .form-box {
+            margin-bottom: 1.5rem;
+        }
+
         .form {
             width:88%;
         }
+
         #years {
             width:100%;
-        }
-        #years {
             position: relative;
             left: -3px;
+        }
+
+        #submit-form {
+            margin-top: 0.2rem;
         }
     }
 

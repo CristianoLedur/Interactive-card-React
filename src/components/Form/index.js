@@ -4,6 +4,7 @@ export default function Form({ onToggleTheme }) {
     /* text-error */
     let textErrorUndefined = document.getElementsByClassName('text-error-undefined');
     let textErrorFormat = document.getElementsByClassName('text-error-format');
+    let textErrorDate = document.getElementsByClassName('text-error-date');
 
     /* text exp date */
     let contentExpDate = ['00', '/', '00'];
@@ -29,7 +30,6 @@ export default function Form({ onToggleTheme }) {
     /* check form fields */
     function checkContent(item, validKeys, string = false) {
         let content = item.value;
-        console.log(item.value.length);
         if(item.value.length === 0 ) {
             return "undefined";
         };
@@ -66,16 +66,27 @@ export default function Form({ onToggleTheme }) {
         } else {
             if( ( year < currentYear ) || ( year > (currentYear + 5) ) ) {
                 listInputs[2][1].style.borderColor = "hsl(0, 100%, 66%)";
-                textErrorFormat[2].style.display = "block";
+                textErrorFormat[2].style.display = "none";
+                textErrorUndefined[2].style.display = "none";
+                textErrorDate[0].style.display = "block";
                 status = true;
-            } else if (( month < 1 || month > 12 )) {
+            } else {
+                listInputs[2][1].style.borderColor = "hsl(270, 3%, 87%)";
+            }
+            if (( month < 1 || month > 12 )) {
                 listInputs[2][0].style.borderColor = "hsl(0, 100%, 66%)";
-                textErrorFormat[2].style.display = "block";
+                textErrorFormat[2].style.display = "none";
+                textErrorUndefined[2].style.display = "none";
+                textErrorDate[0].style.display = "block";
                 status = true;
-            };
+            } else {
+                listInputs[2][0].style.borderColor = "hsl(270, 3%, 87%)";
+            }
             if ( year === currentYear && month < currentMonth ) {
                 listInputs[2][0].style.borderColor = "hsl(0, 100%, 66%)";
-                textErrorFormat[2].style.display = "block";
+                textErrorFormat[2].style.display = "none";
+                textErrorUndefined[2].style.display = "none";
+                textErrorDate[0].style.display = "block";
                 status = true;
             };
         };
@@ -151,6 +162,9 @@ export default function Form({ onToggleTheme }) {
         event.preventDefault();
         listInputs = getInputs();
         let status = false;
+        let month = parseInt(listInputs[2][0].value);
+        let year = parseInt(listInputs[2][1].value);
+        let statusDate = ckecksDate(month, year);
         for(let i = 0; i < listInputs.length; i++){
             let k = 0;
             for(let j = 0; j < listInputs[i].length; j++) {
@@ -163,14 +177,18 @@ export default function Form({ onToggleTheme }) {
                 if(statusInput === "format" ) {
                     listInputs[i][j].style.borderColor = "hsl(0, 100%, 66%)";
                     textErrorUndefined[i].style.display = "none";
+                    textErrorDate[0].style.display = "none";
                     textErrorFormat[i].style.display = "block";
                     status = true;
                     k++;
                 } else if(statusInput === "undefined" ) {
                     textErrorFormat[i].style.display = "none";
+                    textErrorDate[0].style.display = "none";
                     textErrorUndefined[i].style.display = "block";
                     listInputs[i][j].style.borderColor = "hsl(0, 100%, 66%)";
                     status = true;
+                    k++;
+                } else if(i === 2 && statusDate) {
                     k++;
                 } else {
                     listInputs[i][j].style.borderColor = "hsl(270, 3%, 87%)";
@@ -179,11 +197,11 @@ export default function Form({ onToggleTheme }) {
             if(k === 0) {
                 textErrorUndefined[i].style.display = "none";
                 textErrorFormat[i].style.display = "none";
+                if(i === 2 ) {
+                    textErrorDate[0].style.display = "none";
+                };
             };
         };
-        let month = listInputs[2][0].value;
-        let year = listInputs[2][1].value;
-        let statusDate = ckecksDate( month, year );
         if(!status && !statusDate) {
             onToggleTheme();
         };
@@ -213,6 +231,7 @@ export default function Form({ onToggleTheme }) {
                 />
                 <span className="text-error-undefined text-error-exp-date">Can`t be blank</span>
                 <span className="text-error-format text-error-exp-date">Wrong format, numbers only</span>
+                <span className="text-error-date text-error-exp-date">Invalid date</span>
                 <label htmlFor="cvc">CVC</label>
                 <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" maxLength="3" 
                 onChange={changeCvc}
