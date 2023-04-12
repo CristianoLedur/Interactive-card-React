@@ -165,6 +165,9 @@ export default function Form({ onToggleTheme }) {
         let month = parseInt(listInputs[2][0].value);
         let year = parseInt(listInputs[2][1].value);
         let statusDate = ckecksDate(month, year);
+        if(!statusDate) {
+            textErrorDate[0].style.display = "none";
+        }
         for(let i = 0; i < listInputs.length; i++){
             let k = 0;
             for(let j = 0; j < listInputs[i].length; j++) {
@@ -177,13 +180,11 @@ export default function Form({ onToggleTheme }) {
                 if(statusInput === "format" ) {
                     listInputs[i][j].style.borderColor = "hsl(0, 100%, 66%)";
                     textErrorUndefined[i].style.display = "none";
-                    textErrorDate[0].style.display = "none";
                     textErrorFormat[i].style.display = "block";
                     status = true;
                     k++;
                 } else if(statusInput === "undefined" ) {
                     textErrorFormat[i].style.display = "none";
-                    textErrorDate[0].style.display = "none";
                     textErrorUndefined[i].style.display = "block";
                     listInputs[i][j].style.borderColor = "hsl(0, 100%, 66%)";
                     status = true;
