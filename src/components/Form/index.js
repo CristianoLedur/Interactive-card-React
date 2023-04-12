@@ -56,6 +56,8 @@ export default function Form({ onToggleTheme }) {
 
     /* check dates */
     function ckecksDate( month, year ) {
+        textErrorFormat[2].style.display = "none";
+        textErrorUndefined[2].style.display = "none";
         let currentMonth = 4;
         let currentYear = 23;
         let status = false;
@@ -66,8 +68,6 @@ export default function Form({ onToggleTheme }) {
         } else {
             if( ( year < currentYear ) || ( year > (currentYear + 5) ) ) {
                 listInputs[2][1].style.borderColor = "hsl(0, 100%, 66%)";
-                textErrorFormat[2].style.display = "none";
-                textErrorUndefined[2].style.display = "none";
                 textErrorDate[0].style.display = "block";
                 status = true;
             } else {
@@ -75,8 +75,6 @@ export default function Form({ onToggleTheme }) {
             }
             if (( month < 1 || month > 12 )) {
                 listInputs[2][0].style.borderColor = "hsl(0, 100%, 66%)";
-                textErrorFormat[2].style.display = "none";
-                textErrorUndefined[2].style.display = "none";
                 textErrorDate[0].style.display = "block";
                 status = true;
             } else {
@@ -84,8 +82,6 @@ export default function Form({ onToggleTheme }) {
             }
             if ( year === currentYear && month < currentMonth ) {
                 listInputs[2][0].style.borderColor = "hsl(0, 100%, 66%)";
-                textErrorFormat[2].style.display = "none";
-                textErrorUndefined[2].style.display = "none";
                 textErrorDate[0].style.display = "block";
                 status = true;
             };
@@ -95,7 +91,6 @@ export default function Form({ onToggleTheme }) {
 
     /* write on the card */
     function writeCards( item, keys, space = false ) {
-        let validKeys = keys;
         let content = item.value;
         if (space) {
             content = content.split(' ').join('');
@@ -108,7 +103,7 @@ export default function Form({ onToggleTheme }) {
                 };
             };
             let char = content.charAt(i);
-            if( char.match(validKeys) ) {
+            if( char.match(keys) ) {
                 newContent += char;
             };
         };
@@ -181,12 +176,18 @@ export default function Form({ onToggleTheme }) {
                     listInputs[i][j].style.borderColor = "hsl(0, 100%, 66%)";
                     textErrorUndefined[i].style.display = "none";
                     textErrorFormat[i].style.display = "block";
+                    if(i === 2 ) {
+                        textErrorDate[0].style.display = "none";
+                    };
                     status = true;
                     k++;
                 } else if(statusInput === "undefined" ) {
                     textErrorFormat[i].style.display = "none";
                     textErrorUndefined[i].style.display = "block";
                     listInputs[i][j].style.borderColor = "hsl(0, 100%, 66%)";
+                    if(i === 2 ) {
+                        textErrorDate[0].style.display = "none";
+                    };
                     status = true;
                     k++;
                 } else if(i === 2 && statusDate) {

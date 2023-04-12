@@ -45,8 +45,8 @@ E pronto, você já pode sair fazendo ajustes e melhorias no projeto.
 | Implementar a interatividade | 200 | 304 | 08/04 | 
 | Testar a página em diferentes dispositivos | 60 | 25 | 09/04 | 
 | Fazer ajustes finais no design | 30 | 45 | 09/04 |
-| Replicar a estrutura utilizando React | 220 | 205 | 11/04 |
-| Total (em minutos) | 850 | 1021 |
+| Replicar a estrutura utilizando React | 220 | 225 | 11/04 |
+| Total (em minutos) | 850 | 1041 |
 
 ## Status
 
