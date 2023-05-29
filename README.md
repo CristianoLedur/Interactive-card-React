@@ -1,14 +1,14 @@
-# Teste Dev Junior - MTD
+# Interactive Card - React
 
 <img src="./src/assets/screenshot.png" style="width: 500px;">
 
-Em um primeiro momento este teste foi feito utilizando somente HTML, CSS e Javascript. Como ainda havia tempo de sobra para o envio, busquei replicar o mesmo utilizando React. Tomei tal caminho, pois, escolhi iniciar o teste com as tecnologias as quais eu mais dominava.
+Em um primeiro momento este teste foi feito utilizando somente HTML, CSS e Javascript. Busquei replicar o mesmo utilizando React. Tomei tal caminho, pois, escolhi iniciar o projeto com as tecnologias as quais eu mais dominava.
 
-> Caso tenha interesse em ver o teste feito apenas em HTML, CSS e Javascript, basta [clicar aqui](https://github.com/CristianoLedur/Desafio-MTD) para vê-lo em outro repositório.
+> Caso tenha interesse em ver o teste feito apenas em HTML, CSS e Javascript, basta [clicar aqui](https://github.com/CristianoLedur/Interactive-Card) para vê-lo em outro repositório.
 
 ## 🚀 Acessando a interface
 
-Para acessar a interface [clique aqui!](https://teste-dev-junior-mtd-react.vercel.app/)
+Para acessar a interface [clique aqui!](https://interactive-card-react.vercel.app/)
 
 ## ☕ Usando o projeto
 
@@ -17,12 +17,12 @@ Para usar o projeto, siga estas etapas:
 * Clone o repositório
 
 ```
-git clone https://github.com/CristianoLedur/Teste-Dev-Junior-MTD.git
+git clone https://github.com/CristianoLedur/Interactive-card-React.git
 ```
 
 * Acesse a pasta do projeto
 ```
-cd Teste-Dev-Junior-MTD
+cd interactiveCard
 ```
 
 * Instale as dependências
@@ -52,4 +52,4 @@ E pronto, você já pode sair fazendo ajustes e melhorias no projeto.
 
 🎯 Concluído
 
-[⬆ Voltar ao topo](#Teste-Dev-Junior)<br>
+[⬆ Voltar ao topo](#Interactive-card)<br>
