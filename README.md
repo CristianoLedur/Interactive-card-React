@@ -1,4 +1,4 @@
-# Interactive Card - React
+# Interactive Card React
 
 <img src="./src/assets/screenshot.png" style="width: 500px;">
 
@@ -52,4 +52,4 @@ E pronto, você já pode sair fazendo ajustes e melhorias no projeto.
 
 🎯 Concluído
 
-[⬆ Voltar ao topo](#Interactive-card)<br>
+[⬆ Voltar ao topo](#Interactive-card-React)<br>
